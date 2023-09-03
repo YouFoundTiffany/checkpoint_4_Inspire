@@ -1,3 +1,9 @@
+// ✅ GET / api / todos	gets all the todos created by the user sending the request
+// GET / api / todos /:id	gets a single todo by its id
+// ✅ POST / api / todos	creates a new todo from the request body
+// PUT / api / todos /:id	targest a single todo by its id and updates it according to the request body
+// ✅ DELETE / api / todos /:id	removes a single todo by its id
+
 import { AppState } from "../AppState.js"
 import { todosService } from "../services/TodosService.js"
 import { getFormData } from "../utils/FormHandler.js"
@@ -54,7 +60,7 @@ export class TodosController {
     }
     // 3️⃣ DELETE - DELETE
     async deleteTodo(todoId) {
-        debugger
+        // debugger
         try {
             console.log('clicked delete', todoId)
             if (await Pop.confirm("Delete To Do?")) {
