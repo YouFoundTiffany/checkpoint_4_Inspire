@@ -6,11 +6,11 @@ import { loadState } from './utils/Store.js'
 
 class ObservableAppState extends EventEmitter {
   page = ''
-
+  account
   /** @type {Todo[]} */
   sandboxTodos = []
 
-
+  updatedDescription = null
   user = null
   /** @type {import('./models/Account.js').Account | null} */
   // @ts-ignore
