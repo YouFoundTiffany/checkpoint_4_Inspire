@@ -1,8 +1,10 @@
 /* BASIC STYLES HERE */
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1682687220499-d9c06b872eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    /* background-image: url('https://images.unsplash.com/photo-1682687220499-d9c06b872eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); */
     background-size: cover;
+    background-position: center;
+    font-family: 'Dosis', sans-serif;
 }
 
 .font-dosis {
@@ -10,3 +12,35 @@ body {
 }
 
 /* UTILITIES */
+.bx-bg-blur{
+    color: whitesmoke;
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+    /* padding: .5em; */
+    background-color: rgba(22, 17, 17, 0.737);
+}
+.text-align{
+    text-align:;
+}
+
+.author-name{
+    revealed on hover
+}
+.author-name:hover{
+
+}
+.overflow {
+    overflow: scroll;
+}
+
+.image-body {
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 1s;
+
+    backdrop-filter: blur(20px);
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: .5em;
+    background-color: rgba(22, 19, 28, 0.59);
+}

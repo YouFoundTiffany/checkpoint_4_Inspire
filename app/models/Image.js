@@ -3,13 +3,12 @@ import { AppState } from "../AppState.js"
 
 export class Image {
     constructor(data) {
-        this.url = data.url
-        this.imgUrl = data.imgUrl
+        this.url = data.largeImgUrl || data.imgUrl || data.hdurl || data.url || ''
         this.query = data.query
         this.author = data.author
-        this.largeImgUrl = data.largeImgUrl
-
+        this.imageUrl = data.url
     }
+
 }
 
 

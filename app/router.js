@@ -1,7 +1,11 @@
 import { AboutController } from "./controllers/AboutController.js";
 import { TodosController } from "./controllers/TodosController.js";
+import { ImagesController } from "./controllers/ImagesController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
+import { QuotesController } from "./controllers/QuotesController.js";
+import { WeatherController } from "./controllers/WeatherController.js";
+import { ClockController } from "./controllers/ClockController.js";
 
 /**
  * Register your routes for the application here
@@ -10,58 +14,74 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: TodosController,
-    view: /*html*/`<section class="container-fluid">
-      <div class="row justify-content-between p-1">
-        <div class="col-12 col-md-3">
-          <h6>Image by</h6>
-          <h5>Author Name</h5>
+    controller: [TodosController, ImagesController, QuotesController, WeatherController, ClockController],
+    view: /*html*/`
+ </section>
+    <section class="container-fluid h-25">
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-3 pt-2">
+          <div class="bx-bg-blur p-1">
+            <h6>Image by</h6>
+            <h5>Author Name</h5>
+          </div>
         </div>
+        <!-- need to put a string interp or link in div below for weather -->
         <div class="col-12 col-md-3 text-end">
-          <div class="bg-blur">
-            <div>
-              <p>65*</p>
+          <!-- weather template -->
+          <div class="row justify-content-end p-2 pe-3">
+            <div class=" justify-content-end col-4 bx-bg-blur">
+              <p class="text-end">65*</p>
               <p>Sunny</p>
               <p>☀️</p>
             </div>
-
+            <!-- end weather temp -->
           </div>
         </div>
-
       </div>
     </section>
-    <section class="container-fluid h-50">
-      <div>
-        <div>
-          <h1>Clock</h1>
+    <section class="container-fluid h-50 justify-content-center align-items-center d-flex">
+      <!-- need to put a string interp or link in div below for clock -->
+      <div class="row justify-content-center">
+        <!-- clock template -->
+        <div class="bx-bg-blur col-10 text-center">
+          <h1 id="clock">HH:MM:SS</h1>
         </div>
+        <!-- end clock temp -->
       </div>
 
     </section>
 
-    <section class="conatainer">
-      <div class="row justify-content-end p-2">
-        <div class="text-white col-12 col-md-4">
-          quote
+    <section class="conatainer-fluid h-25 de-flex flex-column justify-content-end p-1">
+      <!-- need to put a string interp or link in div below for quote -->
+      <div class="m-0 row justify-content-end align-items-baseline pe-2">
+        <!-- quote template -->
+        <div class="col-12 col-md-4 d-flex justify-content-end align-items-baseline">
+
+          <div class="bx-bg-blur col-12 px-2 pt-2 d-flex flex-column align-baseline">
+            <p class="text-center fs-5">stringy interps here</p>
+            <p class="text-block">author string interputhor string interputhor string interputhor string interputhor
+              string interp</p>
+          </div>
         </div>
-        <div class="col-12 col-md-3">
-          <div class="row text-white justify-content-between" id="">
-            <div class="col-12 col-md-4 px-1">TO DO LIST </div>
-            <div class="col-12 col-md-4 px-1"> 4 left</div>
+        <!-- spacer -->
+        <div class="col-1"></div>
+        <!-- end quote temp -->
+        <!-- this is top of Todo List stays in the View -->
+        <div class="bx-bg-blur col-12 col-md-3 justify-content-end align-items-end">
+          <div class="row justify-content-between w-100" id="">
+            <div class="col-12 col-md-4 pt-1">TO DO LIST </div>
+            <div class="col-12 col-md-1"></div>
+            <div class="col-12 col-md-6 pt-1">4 left</div>
             <form onsubmit="app.TodosController.createTodo()">
-              <input name="todo" type="text" value="To Do" />
-              <button class="mdi mdi-plus-box" type="submit" value="Submit"></button>
+             <input onfocus="this.value=''" name="description" type="text" value="To Do" />
+             <button class="mdi mdi-plus-box" type="submit" value="Submit"></button>
+           </form>
           </div>
-
-          <div class="row" id="todos">
-
+          <!--xxxxxxxx created todos template keep this top row -->
+          <div class="row col-12 w-100" id="todos">
+            <!--WE NEVER SEE THIS LINE yyyyyyyy template located in Todo model -->
 
           </div>
-        </div>
-
-
-      </div>
-    </section>
     `
   },
   // {
@@ -86,9 +106,7 @@ export const router = [
 
 
 
-
-// WHAT GOES ABOVE IN THE ROUTER PRIOR TO BLOCKING IN ENTIRE page
-// </section >
+//  </section >
 //   <div class="conatainer-fluid">
 //     <section class="row justify-content-end p-2">
 //       <div class="col-4">

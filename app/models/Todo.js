@@ -1,22 +1,20 @@
 // 🆑
 export class Todo {
     constructor(data) {
+        this.id = data.id || ""
         // tick box
         this.completed = data.completed
+        this.creatorId = data.creatorid
         // text box
-        this.description = data.description
-        //
-        this.creatorId = data.id
-        this.id = data.id || ''
-
+        this.description = data.description || ""
     }
 
 
     // Codeworks FormHandler only works for form tags. My Todos are displayed in a text area. Adding an On Input attribute. oninput - triggers my function for the textarea. https://www.w3schools.com/jsref/event_oninput.asp
     get todoTemplate() {
-        return `
-           <div class="col-12" id="todos">
-
+        return `<!--aaaaa -->
+           <div class="col-12 w-100" id="">
+<!--bbbbbb -->
       <span><input class="form-check-input" type="checkbox" name="completed" value="" id="flexCheckDefault">
       </span>
 

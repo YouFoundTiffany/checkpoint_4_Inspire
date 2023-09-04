@@ -13,6 +13,7 @@ import { setHTML } from "../utils/Writer.js"
 
 // 🅿️ DRAW TO DO LIST TO PAGE
 function _drawTodos() {
+    // debugger
     console.log('_drawTodo Controller, pulling created ToDo from Sandbox')
     let todos = AppState.sandboxTodos
     let template = ''
@@ -25,9 +26,10 @@ export class TodosController {
         // debugger
         console.log('Sandbox Todos Controller is connected')
         // this.getTodos()
+        AppState.on('account', this.getTodos)
         AppState.on('sandboxTodos', _drawTodos)
         // NOTE wait for the account to come back before trying  get req to the sandbox
-        AppState.on('account', this.getTodos)
+        // AppState.on('edit', this.editTodo)
     }
     //  1️⃣  READ - GET-  PULL TO DO FROM DB
     async getTodos() {
@@ -41,7 +43,7 @@ export class TodosController {
     }
     //  2️⃣  CREATE - POST
     async createTodo() {
-        // debugger
+        debugger
         try {
             // @ts-ignore
             event.preventDefault()

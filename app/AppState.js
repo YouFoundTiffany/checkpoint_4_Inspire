@@ -8,7 +8,7 @@ class ObservableAppState extends EventEmitter {
   page = ''
   account
 
-  
+
   // THE TODO's
   /** @type {Todo[]} */
   sandboxTodos = []
@@ -18,21 +18,21 @@ class ObservableAppState extends EventEmitter {
   // IMAGES
   /** @type {import('.models/Image.js').Image[]} */
   image = []
-  /** @type {import('.models/Image.js').Image|null} */
+  /** @type {import('.models/Image.js').Image | null} */
   activeImage = null
 
 
   // QUOTES
   /** @type {import('.models/Quote.js').Quote[]} */
   quote = []
-  /** @type {import('.models/Quote.js').Quote|null} */
+  /** @type {import('.models/Quote.js').Quote | null} */
   activeQuote = null
 
 
   // WEATHER
   /** @type {import('.models/Weather.js').Weather[]} */
   weather = []
-  /** @type {import('.models/Weather.js').Weather|null} */
+  /** @type {import('.models/Weather.js').Weather | null} */
   activeWeather = null
 
 
