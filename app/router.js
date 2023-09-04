@@ -43,8 +43,8 @@ export const router = [
       <!-- need to put a string interp or link in div below for clock -->
       <div class="row justify-content-center">
         <!-- clock template -->
-        <div class="bx-bg-blur col-10 text-center">
-          <h1 id="clock">HH:MM:SS</h1>
+        <div class="p-2 bx-bg-blur text-center">
+          <h1 class="m-0 px-1" id="clock"></h1>
         </div>
         <!-- end clock temp -->
       </div>

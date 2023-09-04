@@ -12,6 +12,8 @@ const imageapi = axios.create({
 })
 
 
+
+
 class ImagesService {
     async getImage() {
         // debugger
