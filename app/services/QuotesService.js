@@ -27,7 +27,7 @@ class QuotesService {
             }
             // const apiData = await response.json()
             const quote = new Quote(quoteData)
-            // console.log('this is the quote', quote)
+            console.log('this is the quote', quote)
             AppState.activeQuote = quote
         } catch (error) {
             Pop.error(error)

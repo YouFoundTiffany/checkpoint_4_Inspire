@@ -5,6 +5,7 @@ body {
     background-size: cover;
     background-position: center;
     font-family: 'Dosis', sans-serif;
+    /* FIXME add some styles to keep the background from repeating. Try to scale the image larger */
 
 }
 
@@ -13,23 +14,24 @@ body {
 }
 
 /* UTILITIES */
-.bx-bg-blur{
+.bx-bg-blur {
     color: whitesmoke;
     backdrop-filter: blur(10px);
     border-radius: 6px;
     /* padding: .5em; */
     background-color: rgba(22, 17, 17, 0.405);
 }
-.text-align{
-    text-align:;
-}
 
-.author-name{
+/* .text-align {
+    text-align: ;
+} */
+
+/* .author-name {
     revealed on hover
-}
-.author-name:hover{
+} */
 
-}
+/* .author-name:hover {} */
+
 .overflow {
     overflow: scroll;
 }

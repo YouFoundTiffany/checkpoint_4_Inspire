@@ -9,13 +9,12 @@ export class Quote {
         this.author = data.author || ''
     }
 
-    get QuoteTemplate(quote) {
+    get QuoteTemplate() {
+        // REVIEW the style and layout of the elements and how they interact with the id in the router
         return `
-    <div>
         <p>${this.author}</p>
         <p>${this.content}</p>
-    </div>
-    `
+        `
     }
 
 }

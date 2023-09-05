@@ -9,6 +9,7 @@ function _drawDailyQuote() {
     const quote = AppState.activeQuote //supposed to be quote = null
     let quotes = AppState.activeQuote
     let template = ''
+    // FIXME need get template from quote to set into the HTML
     setHTML('quotes', template)
 
 }
@@ -36,14 +37,14 @@ export class QuotesController {
         } catch (error) {
             console.log(error)
         }
-    // }
-    // drawQuote() {
-    //     const quote = AppState.activeQuote
-    //     if (!quote) { return }
-    //     const quoteHtml = quote.QuoteTemplate(quote)
-    //     document.getElementById('quote-div')
-    //     ?.innerHTML=quoteHtml
-}
+        // }
+        // drawQuote() {
+        //     const quote = AppState.activeQuote
+        //     if (!quote) { return }
+        //     const quoteHtml = quote.QuoteTemplate(quote)
+        //     document.getElementById('quote-div')
+        //     ?.innerHTML=quoteHtml
+    }
 
 
 }

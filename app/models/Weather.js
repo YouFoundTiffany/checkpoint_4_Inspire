@@ -1,14 +1,17 @@
 import { AppState } from "../AppState.js"
-const weatherData = response.data
-const kelvinTemp = weatherData.main.temp
+// const weatherData = response.data
+// const kelvinTemp = weatherData.main.temp
 
 export class Weather {
-    cosntructor(data) {
+    constructor(data) {
         this.weather = data.weather
         this.icon = data.icon
         this.coord = data.coord
         this.temp = data.temp
         this.name = data.name
+        // FIXME create compute getters to compute the right numbers. Then create template getters for each value.
+        // this.c = computeCelcius
+        // this.f = computeFahrenheit
     }
 
     // get WeatherTemplate(){
@@ -16,11 +19,11 @@ export class Weather {
     // }
 
 
-    get ComputeTemp(kelvinTemp) {
-        const celsius = kelvinTemp - 273.15
-        const fahrenheit = (celsius * 9 / 5) + 32
+    // get ComputeTemp(kelvinTemp) {
+    //     const celsius = kelvinTemp - 273.15
+    //     const fahrenheit = (celsius * 9 / 5) + 32
 
-    }
+    // }
 
 
 

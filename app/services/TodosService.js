@@ -34,9 +34,11 @@ class TodosService {
     }
     // 4️⃣ EDIT - PUT - any time we "talk" to our api it will probably need to be a try catch
     async editTodo(todoId) {
-
+        // FIXME before our api call we have to change the data of the todo we clicked on.
+        // find the todo in the appstate, change it's data, send to api
         const response = await api.put(`api/todos/${todoId}`)
 
+        // rest of this looks fine
         const updatedTodo = new Todo(response.data)
         let originalTodoIndex = AppState.sandboxTodos.findIndex(todo => todo.id == todoId)
         AppState.sandboxTodos.splice(originalTodoIndex, 1, updatedTodo)

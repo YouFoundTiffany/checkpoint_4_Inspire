@@ -19,6 +19,7 @@ function _drawTodos() {
     let template = ''
     todos.forEach(todo => template += todo.todoTemplate)
     setHTML('todos', template)
+    // FIXME ALSO while drawing count up uncompleted todos and draw them too in their own setHTML call
 }
 // 🆑
 export class TodosController {
@@ -75,6 +76,7 @@ export class TodosController {
 
     // 4️⃣ EDIT - PUT
     async editTodo(todoId) {
+        // FIXME look at spellbook for preparing a spell. there is a lot going on here that in uneccisary for this checkbox.
         // debugger
         try {
             window.event?.preventDefault()
