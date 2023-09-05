@@ -1,11 +1,15 @@
 /* BASIC STYLES HERE */
 
 body {
-    /* background-image: url('https://images.unsplash.com/photo-1682687220499-d9c06b872eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); */
-    background-size: cover;
-    background-position: center;
+    background-size: auto auto;
+    /* background-position: center center; */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
     font-family: 'Dosis', sans-serif;
-    /* FIXME add some styles to keep the background from repeating. Try to scale the image larger */
+    /* padding: 5em; */
+    /* margin: auto; */
+    /*  add some styles to keep the background from repeating. Try to scale the image larger */
 
 }
 

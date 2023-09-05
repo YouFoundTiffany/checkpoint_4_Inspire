@@ -44,7 +44,7 @@ export class TodosController {
     }
     //  2️⃣  CREATE - POST
     async createTodo() {
-        debugger
+        // debugger
         try {
             // @ts-ignore
             event.preventDefault()
@@ -78,16 +78,25 @@ export class TodosController {
     async editTodo(todoId) {
         // FIXME look at spellbook for preparing a spell. there is a lot going on here that in uneccisary for this checkbox.
         // debugger
+
+        //  async prepareSpell(spellId) {
+        //     try {
+        //         await sandboxSpellsService.prepareSpell(spellId)
+        //     } catch (error) {
+        //         Pop.error(error)
+        //         console.error(error);
+        //     }
+        // }
         try {
-            window.event?.preventDefault()
+           await todosService.editTodo(todoId)
             // @ts-ignore
-            const text = window.event.target
-            // @ts-ignore
-            window.event.getTextArea(text)
-            // @ts-ignore
-            // console.log('edit todo data!', textData)
-            // console.log('clicked edit ', todoId)
-            await todosService.editTodo(todoId)
+            // const text = window.event.target
+            // // @ts-ignore
+            // window.event.getTextArea(text)
+            // // @ts-ignore
+            // // console.log('edit todo data!', textData)
+            // // console.log('clicked edit ', todoId)
+            // await todosService.editTodo(todoId)
 
             if (await Pop.confirm("Edit To Do?")) {
             }

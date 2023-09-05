@@ -36,7 +36,20 @@ class TodosService {
     async editTodo(todoId) {
         // FIXME before our api call we have to change the data of the todo we clicked on.
         // find the todo in the appstate, change it's data, send to api
-        const response = await api.put(`api/todos/${todoId}`)
+        // remming out as mick suggest this is not needed.const response = await api.put(`api/todos/${todoId}`)
+        // const todo = AppState.sandboxTodos.find(todo => todo.id == todoId)
+        // todo.updatedTodo = !todo.updatedTodo
+        // async prepareSpell(spellId) {
+        //     // you could check for prepared length and just skip all this if at max
+        //     const spell = AppState.mySpells.find(spell => spell.id == spellId)
+        //     spell.prepared = !spell.prepared
+
+        //     const res = await api.put(`api/spells/${spellId}`, spell)
+        //     console.log('Prepared spell', res.data);
+        //     AppState.emit('mySpells')
+
+        // }
+
 
         // rest of this looks fine
         const updatedTodo = new Todo(response.data)

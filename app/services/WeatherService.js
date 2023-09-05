@@ -19,16 +19,12 @@ class WeatherService {
             // This logged first before the controller
             console.log('hello from getWeather', response)
             const weatherData = response.data
-            // NOTE - !!!!!!!!!THIS KEEPS MESSING YOU UP!!!!!!  ENSURE THAT THE 'content' word matches your MODEL!!!!!!!!
-            // if (!weatherData || !weatherData.data) {
-            //     throw new Error('invalid weather data')
-            // }
-            // const apiData = await response.json()
+          
             const dailyForecast = new Weather(weatherData)
             console.log('this is the weather', dailyForecast)
             AppState.activeWeather = dailyForecast
 
-       
+
 
     }
 

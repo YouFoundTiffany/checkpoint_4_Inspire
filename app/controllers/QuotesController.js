@@ -10,7 +10,8 @@ function _drawDailyQuote() {
     let quotes = AppState.activeQuote
     let template = ''
     // FIXME need get template from quote to set into the HTML
-    setHTML('quotes', template)
+    // let dailyQuote = AppState.activeQuote
+    // setHTML('dailyQuote', template)
 
 }
 
