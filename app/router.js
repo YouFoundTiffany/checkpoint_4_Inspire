@@ -55,12 +55,13 @@ export const router = [
       <!-- need to put a string interp or link in div below for quote -->
       <div class="m-0 row justify-content-end align-items-baseline pe-2">
         <!-- quote template -->
-        <div class="col-12 col-md-4 d-flex justify-content-end align-items-baseline">
+        <div id="quotes" class="col-12 col-md-4 d-flex justify-content-end align-items-baseline">
 
-          <div class="bx-bg-blur col-12 px-2 pt-2 d-flex flex-column align-baseline">
-            <p class="text-center fs-5">stringy interps here</p>
-            <p class="text-block">author string interputhor string interputhor string interputhor string interputhor
-              string interp</p>
+          <div class="bx-bg-blur m-0 col-12 px-2 pt-2 d-flex flex-column align-baseline">
+
+
+
+
           </div>
         </div>
         <!-- spacer -->

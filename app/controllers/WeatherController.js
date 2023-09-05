@@ -6,7 +6,7 @@ import { setHTML } from "../utils/Writer.js";
 
 export class WeatherController {
     constructor() {
-        console.log('weather controller connected')
+        // console.log('weather controller connected')
         // this.getWeather()
         // NOTE wait for the account to come back before trying  get req to the sandbox
         AppState.on('account', this.getWeather)

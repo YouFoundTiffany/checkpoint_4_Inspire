@@ -1,8 +1,13 @@
+
 import { Todo } from './models/Todo.js'
+import { Image } from './models/Image.js'
+import { Quote } from './models/Quote.js'
+import { Weather } from './models/Weather.js'
 import { Value } from './models/Value.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
+
 
 class ObservableAppState extends EventEmitter {
   page = ''
@@ -16,23 +21,23 @@ class ObservableAppState extends EventEmitter {
 
 
   // IMAGES
-  /** @type {import('.models/Image.js').Image[]} */
+  /** @type {Image[]} */
   image = []
-  /** @type {import('.models/Image.js').Image | null} */
+  /** @type {Image[] | null} */
   activeImage = null
 
 
   // QUOTES
-  /** @type {import('.models/Quote.js').Quote[]} */
-  quote = []
-  /** @type {import('.models/Quote.js').Quote | null} */
+  /** @type {Quote[]} */
+  quotes = []
+  /** @type {Quote | null} */
   activeQuote = null
 
 
   // WEATHER
-  /** @type {import('.models/Weather.js').Weather[]} */
+  /** @type {Weather[]} */
   weather = []
-  /** @type {import('.models/Weather.js').Weather | null} */
+  /** @type {Weather | null} */
   activeWeather = null
 
 

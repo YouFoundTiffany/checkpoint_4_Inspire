@@ -5,6 +5,7 @@ body {
     background-size: cover;
     background-position: center;
     font-family: 'Dosis', sans-serif;
+
 }
 
 .font-dosis {
@@ -14,10 +15,10 @@ body {
 /* UTILITIES */
 .bx-bg-blur{
     color: whitesmoke;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border-radius: 6px;
     /* padding: .5em; */
-    background-color: rgba(22, 17, 17, 0.737);
+    background-color: rgba(22, 17, 17, 0.405);
 }
 .text-align{
     text-align:;

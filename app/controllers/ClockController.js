@@ -3,7 +3,7 @@ import { clockService } from "../services/ClockService.js";
 
 export class ClockController {
     constructor() {
-        console.log('clock controller is connected')
+        // console.log('clock controller is connected')
         this.updateClock()
         setInterval(this.updateClock, 1000)
     }
@@ -11,5 +11,5 @@ export class ClockController {
     updateClock() {
         clockService.getTime()
     }
-   
+
 }

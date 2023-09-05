@@ -9,10 +9,10 @@ class TodosService {
     //   1️⃣  GET TO DO
     async getTodos() {
         const response = await api.get('api/todos')
-        console.log(response.data, 'Service: getting the sandbox todos')
+        // console.log(response.data, 'Service: getting the sandbox todos')
         let mappedArray = response.data.map(dataObj => new Todo(dataObj))
         AppState.sandboxTodos = mappedArray
-        console.log(AppState.sandboxTodos)
+        // console.log(AppState.sandboxTodos)
     }
     //  2️⃣  CREATE TO DO
     async createTodo(formData) {

@@ -5,7 +5,7 @@ import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 function _drawDailyImage() {
-    console.log('drawing daily image')
+    // console.log('drawing daily image')
     let image = AppState.activeImage
     if (image.url) {
         document.body.style.backgroundImage = `url(${image.url})`
@@ -19,15 +19,15 @@ function _drawDailyImage() {
 }
 export class ImagesController {
     constructor() {
-        console.log('images controller connected')
+        // console.log('images controller connected')
         // this.getImage()
-        // NOTE wait for the account to come back before trying  get req to the sandbox
+        //  wait for the account to come back before trying  get req to the sandbox
         AppState.on('account')
         AppState.on('user')
 
         AppState.on('activeImage', _drawDailyImage)
         this.getImage()//getting the ijmage data
-        console.log('drawing daily image')
+        // console.log('drawing daily image')
     }
     async getImage() {
         try {

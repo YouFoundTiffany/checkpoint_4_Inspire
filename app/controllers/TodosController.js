@@ -14,7 +14,7 @@ import { setHTML } from "../utils/Writer.js"
 // 🅿️ DRAW TO DO LIST TO PAGE
 function _drawTodos() {
     // debugger
-    console.log('_drawTodo Controller, pulling created ToDo from Sandbox')
+    // console.log('_drawTodo Controller, pulling created ToDo from Sandbox')
     let todos = AppState.sandboxTodos
     let template = ''
     todos.forEach(todo => template += todo.todoTemplate)
@@ -24,7 +24,7 @@ function _drawTodos() {
 export class TodosController {
     constructor() {
         // debugger
-        console.log('Sandbox Todos Controller is connected')
+        // console.log('Sandbox Todos Controller is connected')
         // this.getTodos()
         AppState.on('account', this.getTodos)
         AppState.on('sandboxTodos', _drawTodos)
@@ -35,7 +35,7 @@ export class TodosController {
     async getTodos() {
         // debugger
         try {
-            console.log('Controller getTodo(): getting todo from DB')
+            // console.log('Controller getTodo(): getting todo from DB')
             await todosService.getTodos()
         } catch (error) {
             Pop.error(error)
@@ -50,7 +50,7 @@ export class TodosController {
             // @ts-ignore
             const form = event.target
             const formData = getFormData(form)
-            console.log('todo data!', formData)
+            // console.log('todo data!', formData)
             await todosService.createTodo(formData)
             // @ts-ignore
             form.reset()
@@ -64,7 +64,7 @@ export class TodosController {
     async deleteTodo(todoId) {
         // debugger
         try {
-            console.log('clicked delete', todoId)
+            // console.log('clicked delete', todoId)
             if (await Pop.confirm("Delete To Do?")) {
                 await todosService.deleteTodo(todoId)
             }
@@ -83,8 +83,8 @@ export class TodosController {
             // @ts-ignore
             window.event.getTextArea(text)
             // @ts-ignore
-            console.log('edit todo data!', textData)
-            console.log('clicked edit ', todoId)
+            // console.log('edit todo data!', textData)
+            // console.log('clicked edit ', todoId)
             await todosService.editTodo(todoId)
 
             if (await Pop.confirm("Edit To Do?")) {
