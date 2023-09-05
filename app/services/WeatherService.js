@@ -13,15 +13,15 @@ class WeatherService {
     async getWeather() {
         // debugger
 
-            console.log('weather service connected')
+            // console.log('weather service connected')
             // api request get request
             const response = await weatherapi.get('weather')
             // This logged first before the controller
-            console.log('hello from getWeather', response)
+            // console.log('hello from getWeather', response)
             const weatherData = response.data
-          
+
             const dailyForecast = new Weather(weatherData)
-            console.log('this is the weather', dailyForecast)
+            // console.log('this is the weather', dailyForecast)
             AppState.activeWeather = dailyForecast
 
 

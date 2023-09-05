@@ -24,9 +24,7 @@ function _drawTodos() {
 // 🆑
 export class TodosController {
     constructor() {
-        // debugger
-        // console.log('Sandbox Todos Controller is connected')
-        // this.getTodos()
+
         AppState.on('account', this.getTodos)
         AppState.on('sandboxTodos', _drawTodos)
         // NOTE wait for the account to come back before trying  get req to the sandbox
@@ -36,7 +34,6 @@ export class TodosController {
     async getTodos() {
         // debugger
         try {
-            // console.log('Controller getTodo(): getting todo from DB')
             await todosService.getTodos()
         } catch (error) {
             Pop.error(error)
@@ -55,7 +52,6 @@ export class TodosController {
             await todosService.createTodo(formData)
             // @ts-ignore
             form.reset()
-            // TODO check in appstate if form should be null
         } catch (error) {
 
             Pop.error(error)
@@ -65,7 +61,7 @@ export class TodosController {
     async deleteTodo(todoId) {
         // debugger
         try {
-            // console.log('clicked delete', todoId)
+
             if (await Pop.confirm("Delete To Do?")) {
                 await todosService.deleteTodo(todoId)
             }
@@ -78,30 +74,13 @@ export class TodosController {
     async editTodo(todoId) {
         // FIXME look at spellbook for preparing a spell. there is a lot going on here that in uneccisary for this checkbox.
         // debugger
-
-        //  async prepareSpell(spellId) {
-        //     try {
-        //         await sandboxSpellsService.prepareSpell(spellId)
-        //     } catch (error) {
-        //         Pop.error(error)
-        //         console.error(error);
-        //     }
-        // }
         try {
-           await todosService.editTodo(todoId)
-            // @ts-ignore
-            // const text = window.event.target
-            // // @ts-ignore
-            // window.event.getTextArea(text)
-            // // @ts-ignore
-            // // console.log('edit todo data!', textData)
-            // // console.log('clicked edit ', todoId)
-            // await todosService.editTodo(todoId)
+            // console.log('editing todo');
+            await todosService.editTodo(todoId)
 
-            if (await Pop.confirm("Edit To Do?")) {
-            }
         } catch (error) {
             Pop.error(error)
+            console.error(error)
         }
     }
 }

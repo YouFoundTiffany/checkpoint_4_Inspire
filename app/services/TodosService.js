@@ -18,7 +18,7 @@ class TodosService {
     async createTodo(formData) {
         // debugger
         const response = await api.post('api/todos', formData)
-        console.log(response.data, 'creating To Do')
+        // console.log(response.data, 'creating To Do')
         const newTodo = new Todo(response.data)
         AppState.sandboxTodos.push(newTodo)
         this.getTodos()
@@ -27,35 +27,31 @@ class TodosService {
     async deleteTodo(todoId) {
         // debugger
         const response = await api.delete(`api/todos/${todoId}`)
-        console.log(response.data, 'Deleting the Todo! Yikes')
+        // console.log(response.data, 'Deleting the Todo! Yikes')
         // NOTE we are filtering the array for all that DO NOT match the current Id, does not equal !==
         const filteredArray = AppState.sandboxTodos.filter(t => t.id !== todoId)
         AppState.sandboxTodos = filteredArray
     }
-    // 4️⃣ EDIT - PUT - any time we "talk" to our api it will probably need to be a try catch
+    // 4️⃣ EDIT - PUT - any time we "talk" to our api it will probably need to
     async editTodo(todoId) {
         // FIXME before our api call we have to change the data of the todo we clicked on.
         // find the todo in the appstate, change it's data, send to api
-        // remming out as mick suggest this is not needed.const response = await api.put(`api/todos/${todoId}`)
-        // const todo = AppState.sandboxTodos.find(todo => todo.id == todoId)
-        // todo.updatedTodo = !todo.updatedTodo
-        // async prepareSpell(spellId) {
-        //     // you could check for prepared length and just skip all this if at max
-        //     const spell = AppState.mySpells.find(spell => spell.id == spellId)
-        //     spell.prepared = !spell.prepared
+        const todo = AppState.sandboxTodos.find(todo => todo.id == todoId)
+        // @ts-ignore
+        todo.completed = !todo.completed
 
-        //     const res = await api.put(`api/spells/${spellId}`, spell)
-        //     console.log('Prepared spell', res.data);
-        //     AppState.emit('mySpells')
 
-        // }
-
+        const response = await api.put(`api/todos/${todoId}`, todo)
+        // console.log('getting the todo', response.data)
 
         // rest of this looks fine
         const updatedTodo = new Todo(response.data)
+        console.log(updatedTodo);
+        // console.log('this is the updated Todo', updatedTodo)
         let originalTodoIndex = AppState.sandboxTodos.findIndex(todo => todo.id == todoId)
         AppState.sandboxTodos.splice(originalTodoIndex, 1, updatedTodo)
-        AppState.emit('todos')
+
+        AppState.emit('sandboxTodos')
     }
 }
 

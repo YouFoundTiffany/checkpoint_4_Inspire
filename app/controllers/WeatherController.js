@@ -4,7 +4,7 @@ import { weatherService } from "../services/WeatherService.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 function _drawDailyWeather() {
-    console.log('drawing daily weather')
+    // console.log('drawing daily weather')
     const weather = AppState.activeWeather //supposed to be quote = null
     let dailyWeather = AppState.activeWeather
     // if (weather) {
@@ -39,5 +39,5 @@ export class WeatherController {
         }
     }
 
-    
+
 }

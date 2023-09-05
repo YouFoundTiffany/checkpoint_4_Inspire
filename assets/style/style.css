@@ -1,11 +1,15 @@
 /* BASIC STYLES HERE */
-
-body {
-    background-size: auto auto;
+.background-img {
+    /* background-size: cover; */
     /* background-position: center center; */
     background-repeat: no-repeat;
-    width: 100%;
-    height: auto;
+    /* width: fit-content;
+    height: auto; */
+    background-position: center;
+    background-size: cover;
+}
+
+body {
     font-family: 'Dosis', sans-serif;
     /* padding: 5em; */
     /* margin: auto; */
