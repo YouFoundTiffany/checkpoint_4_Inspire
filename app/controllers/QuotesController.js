@@ -5,7 +5,7 @@ import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 function _drawDailyQuote() {
-    console.log('drawing daily quote')
+    // console.log('drawing daily quote')
     const quote = AppState.activeQuote //supposed to be quote = null
     let quotes = AppState.activeQuote
     let template = ''

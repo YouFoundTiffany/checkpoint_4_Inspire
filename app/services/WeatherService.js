@@ -1,5 +1,7 @@
 import { AppState } from "../AppState.js"
-
+import { Weather } from "../models/Weather.js"
+import { Pop } from "../utils/Pop.js"
+Weather
 
 // @ts-ignore
 const weatherapi = axios.create({
@@ -10,14 +12,26 @@ const weatherapi = axios.create({
 
 class WeatherService {
     async getWeather() {
-        // console.log('weather service connected')
-        const response = await fetch('https://sandbox.codeworksacademy.com/api/weather')
-        const data = await response.json()
-        // console.log(data.weather)
-        // const response = await imageapi.get('images')
-        // console.log('GOT IMAGES', response.data)
-        // AppState.activeImage = new Image(response.data)
-        // console.log(AppState.activeImage)
+        // debugger
+        try {
+            console.log('weather service connected')
+            // api request get request
+            const response = await weatherapi.get('weather')
+            // This logged first before the controller
+            console.log('hello from getWeather', response)
+            const weatherData = response.data
+            // NOTE - !!!!!!!!!THIS KEEPS MESSING YOU UP!!!!!!  ENSURE THAT THE 'content' word matches your MODEL!!!!!!!!
+            if (!weatherData || !weatherData.data) {
+                throw new Error('invalid weather data')
+            }
+            // const apiData = await response.json()
+            const dailyForecast = new Weather(weatherData)
+            console.log('this is the weather', dailyForecast)
+            AppState.activeWeather = d
+        } catch (error) {
+            Pop.error(error)
+        }
+
     }
 
 

@@ -14,11 +14,11 @@ class QuotesService {
     async getQuote() {
         // debugger
         try {
-            console.log('quotes service connected')
+            // console.log('quotes service connected')
             // api request get request
             const response = await quoteapi.get('quotes')
             // This logged first before the controller
-            console.log('hello from getQuote', response)
+            // console.log('hello from getQuote', response)
             // wait to parse json result
             const quoteData = response.data
             // NOTE - !!!!!!!!!THIS KEEPS MESSING YOU UP!!!!!!  ENSURE THAT THE 'content' word matches your MODEL!!!!!!!!
@@ -27,7 +27,7 @@ class QuotesService {
             }
             // const apiData = await response.json()
             const quote = new Quote(quoteData)
-            console.log('this is the quote', quote)
+            // console.log('this is the quote', quote)
             AppState.activeQuote = quote
         } catch (error) {
             Pop.error(error)
