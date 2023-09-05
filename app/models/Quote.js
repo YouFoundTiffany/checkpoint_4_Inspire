@@ -9,13 +9,13 @@ export class Quote {
         this.author = data.author || ''
     }
 
-    get QuoteTemplate() {
+    get QuoteTemplate(quote) {
         return `
-  <div>
-    <p>${this.author}</p>
-    <p>${this.content}</p>
-  </div>
-            `
+    <div>
+        <p>${this.author}</p>
+        <p>${this.content}</p>
+    </div>
+    `
     }
 
 }

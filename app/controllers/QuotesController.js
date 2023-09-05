@@ -36,5 +36,14 @@ export class QuotesController {
         } catch (error) {
             console.log(error)
         }
-    }
+    // }
+    // drawQuote() {
+    //     const quote = AppState.activeQuote
+    //     if (!quote) { return }
+    //     const quoteHtml = quote.QuoteTemplate(quote)
+    //     document.getElementById('quote-div')
+    //     ?.innerHTML=quoteHtml
+}
+
+
 }

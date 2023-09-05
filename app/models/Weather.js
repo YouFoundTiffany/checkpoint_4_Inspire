@@ -1,4 +1,6 @@
 import { AppState } from "../AppState.js"
+const weatherData = response.data
+const kelvinTemp = weatherData.main.temp
 
 export class Weather {
     cosntructor(data) {
@@ -8,12 +10,21 @@ export class Weather {
         this.temp = data.temp
         this.name = data.name
     }
+
+    // get WeatherTemplate(){
+    //     return ``
+    // }
+
+
+    get ComputeTemp(kelvinTemp) {
+        const celsius = kelvinTemp - 273.15
+        const fahrenheit = (celsius * 9 / 5) + 32
+
+    }
+
+
+
 }
-
-// get WeatherTemplate(){
-//     return ``
-// }
-
 
 
 // "coord": {

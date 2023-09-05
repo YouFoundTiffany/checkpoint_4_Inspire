@@ -38,4 +38,6 @@ export class WeatherController {
             console.log(error)
         }
     }
+
+    
 }
