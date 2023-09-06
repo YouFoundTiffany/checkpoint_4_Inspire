@@ -21,7 +21,7 @@ class WeatherService {
             const weatherData = response.data
 
             const dailyForecast = new Weather(weatherData)
-            // console.log('this is the weather', dailyForecast)
+            console.log('this is the weather', dailyForecast)
             AppState.activeWeather = dailyForecast
 
 

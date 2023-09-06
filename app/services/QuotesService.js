@@ -17,14 +17,14 @@ class QuotesService {
             // api request get request
             const response = await quoteapi.get('quotes')
             // This logged first before the controller
-            // console.log('hello from getQuote', response)
+            console.log('hello from getQuote', response)
 
             const quoteData = response.data
 
             const quote = new Quote(quoteData)
             console.log('this is the quote', quote)
             AppState.activeQuote = quote
-        
+
 
     }
 

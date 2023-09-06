@@ -6,12 +6,12 @@ import { setHTML } from "../utils/Writer.js";
 
 function _drawDailyQuote() {
     // console.log('drawing daily quote')
-    const quote = AppState.activeQuote //supposed to be quote = null
-    let quotes = AppState.activeQuote
+    let activeQuote = AppState.activeQuote
     let template = ''
     // FIXME need get template from quote to set into the HTML
-    // let dailyQuote = AppState.activeQuote
-    // setHTML('dailyQuote', template)
+    // TODO REACTIVATE WHEN DONE WITH HTML
+    setHTML('active-quote', template)
+    console.log('where is the quote?', activeQuote)
 
 }
 
@@ -29,11 +29,13 @@ export class QuotesController {
 
         AppState.on('activeQuote', _drawDailyQuote)
         this.getQuote()//getting the quote data
+        _drawDailyQuote()
         // console.log('drawing daily quote')
     }
     async getQuote() {
         try {
-            await quotesService.getQuote()
+
+            const response = await quotesService.getQuote()
             _drawDailyQuote()
         } catch (error) {
             console.log(error)

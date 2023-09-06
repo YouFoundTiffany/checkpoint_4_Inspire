@@ -14,8 +14,10 @@ export class Weather {
         // this.f = computeFahrenheit
     }
 
-    // get WeatherTemplate(){
-    //     return ``
+    // get activeWeather(){
+    //     return `
+
+    //     `
     // }
 
 
@@ -29,65 +31,9 @@ export class Weather {
 
 }
 
+// {/* <div class="" justify-content-end col-4 bx-bg-blur">
+//     < p class="text-end" > ${ this.temp }</ >
+//               <p>Sunny</p>
+//               <p>${this.icon}</p>
+//             </div > */}
 
-// "coord": {
-//     "lon": -116.2035,
-//         "lat": 43.6135
-// },
-// "weather": {
-//     "0": {
-//         "id": 800,
-//             "main": "Clear",
-//                 "description": "clear sky",
-//                     "icon": "01n"
-//     },
-//     "icon": "https://openweathermap.org/img/wn/undefined.png"
-// },
-// "base": "stations",
-//     "main": {
-//     "temp": 290.71,
-//         "feels_like": 290.14,
-//             "temp_min": 288.43,
-//                 "temp_max": 292.45,
-//                     "pressure": 1015,
-//                         "humidity": 62
-// },
-// "visibility": 10000,
-//     "wind": {
-//     "speed": 1.54,
-//         "deg": 50
-// },
-// "clouds": {
-//     "all": 0
-// },
-// "dt": 1693887900,
-//     "sys": {
-//     "type": 1,
-//         "id": 3479,
-//             "country": "US",
-//                 "sunrise": 1693833112,
-//                     "sunset": 1693880180
-// },
-// "timezone": -21600,
-//     "id": 5586437,
-//         "name": "Boise",
-//             "cod": 200,
-//                 "origin": "https://openweathermap.org"
-// }
-// {
-//     "name": {
-//         "type": "String"
-//     },
-//     "main": {
-//         "temp": {
-//             "type": "Number"
-//         }
-//     },
-//     "weather": [
-//         {
-//             "description": {
-//                 "type": "String"
-//             }
-//         }
-//     ]
-// }

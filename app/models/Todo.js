@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 // 🆑
 export class Todo {
     constructor(data) {
@@ -11,23 +13,56 @@ export class Todo {
 
 
     // Codeworks FormHandler only works for form tags. My Todos are displayed in a text area. Adding an On Input attribute. oninput - triggers my function for the textarea. https://www.w3schools.com/jsref/event_oninput.asp
+
+//            <div class="col-12 w-100" id="">
+
+//     <span>
+//         ${this.completedCheckbox}
+//     </span>
+
+//     <p name="description" id="">${this.description}
+//     </p>
+
+//     <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
+//     </span>
+
+// </div>
     get todoTemplate() {
         return `
-       <div class="col-12 w-100" id="">
+           <div class="col-12 w-100" id="">
 
-      <span>
-          <input onchange="app.TodosController.editTodo('${this.id}')"z" class="form-check-input" type="checkbox" name="completed" value="" id="flexCheckDefault">
-      </span>
+    <span>
+        ${this.completedCheckbox}
+    </span>
 
-      <p name="description" id="">${this.description}
-      </p>
+    <textarea row=20 column=1 name="description" id="">${this.description}
+    </textarea>
 
-      <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
-      </span>
+    <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
+    </span>
 
-    </div>
+</div>
         `
     }
 
+    get completedCheckbox() {
+        if (this.completed) {
+            return `
+            <input checked onchange="app.TodosController.editTodo('${this.id}')" class="form-check-input" type="checkbox" name="completed" value="" id="flexCheckDefault">
+            `
+        } else {
+            return `
+<input onchange="app.TodosController.editTodo('${this.id}')" class="form-check-input" type="checkbox" name="completed" value="" id="flexCheckDefault">
+            `
+        }
+    }
+
+    static TodoCount() {
+        let sandboxTodos = AppState.sandboxTodos
+        let incompleteTodos = AppState.sandboxTodos.filter(todo => !todo.completed)
+
+        if (incompleteTodos.length <= sandboxTodos.length)
+            return '<h5 class="text-incomplete">${incompleteTodos.length} Left</h5>'
+    }
 
 }
