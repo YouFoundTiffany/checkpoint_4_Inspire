@@ -10,25 +10,26 @@ const quoteapi = axios.create({
 })
 
 
+
 class QuotesService {
     async getQuote() {
 
-            // console.log('quotes service connected')
-            // api request get request
-            const response = await quoteapi.get('quotes')
-            // This logged first before the controller
-            console.log('hello from getQuote', response)
 
-            const quoteData = response.data
+        const response = await quoteapi.get('quotes')
 
-            const quote = new Quote(quoteData)
-            console.log('this is the quote', quote)
-            AppState.activeQuote = quote
+        console.log('hello from getQuote', response)
+
+        const quoteData = response.data
+
+        const quote = new Quote(quoteData)
+        console.log('this is the quote', quote)
+        AppState.activeQuote = quote
 
 
     }
 
-
 }
+
+
 
 export const quotesService = new QuotesService()

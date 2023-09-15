@@ -12,36 +12,21 @@ export class Todo {
     }
 
 
-    // Codeworks FormHandler only works for form tags. My Todos are displayed in a text area. Adding an On Input attribute. oninput - triggers my function for the textarea. https://www.w3schools.com/jsref/event_oninput.asp
-
-//            <div class="col-12 w-100" id="">
-
-//     <span>
-//         ${this.completedCheckbox}
-//     </span>
-
-//     <p name="description" id="">${this.description}
-//     </p>
-
-//     <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
-//     </span>
-
-// </div>
     get todoTemplate() {
         return `
-           <div class="col-12 w-100" id="">
+        <div class="col-12 w-100" id="">
 
-    <span>
+        <span>
         ${this.completedCheckbox}
-    </span>
+        </span>
 
-    <textarea row=20 column=1 name="description" id="">${this.description}
-    </textarea>
+        <textarea row=20 column=1 name="description" id="">${this.description}
+        </textarea>
 
-    <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
-    </span>
+        <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
+        </span>
 
-</div>
+        </div>
         `
     }
 
@@ -52,7 +37,7 @@ export class Todo {
             `
         } else {
             return `
-<input onchange="app.TodosController.editTodo('${this.id}')" class="form-check-input" type="checkbox" name="completed" value="" id="flexCheckDefault">
+            <input onchange="app.TodosController.editTodo('${this.id}')" class="form-check-input" type="checkbox" name="completed" value="" id="flexCheckDefault">
             `
         }
     }
@@ -66,3 +51,16 @@ export class Todo {
     }
 
 }
+//            <div class="col-12 w-100" id="">
+
+//     <span>
+//         ${this.completedCheckbox}
+//     </span>
+
+//     <p name="description" id="">${this.description}
+//     </p>
+
+//     <span id="" class="mdi mdi-trash-can-outline" onclick="app.TodosController.deleteTodo('${this.id}')">
+//     </span>
+
+// </div>

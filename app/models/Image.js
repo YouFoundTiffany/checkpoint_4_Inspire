@@ -9,25 +9,10 @@ export class Image {
         this.imageUrl = data.url
     }
 
+
+    get imageNameTemplate() {
+        return `
+        <p>Image Author <br>${this.author}</p>
+        `
+    }
 }
-
-
-
-
-// {
-//     "url": {
-//         "type": "String"
-//     },
-//     "imgUrl": {
-//         "type": "String"
-//     },
-//     "query": {
-//         "type": "String"
-//     },
-//     "author": {
-//         "type": "String"
-//     },
-//     "largeImgUrl": {
-//         "type": "String"
-//     }
-// }

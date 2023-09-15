@@ -10,25 +10,25 @@ function _drawDailyWeather() {
     if (activeWeather) {
         // TODO REACTIVATE WHEN DONE WITH HTML
         //     setHTML('active-weather', template)
+    }
+}
+
+
+export class WeatherController {
+    constructor() {
+        // AppState.on('account', this.getWeather)
+        AppState.on('activeQuote', _drawDailyWeather)
+        this.getWeather()
+
+    }
+    async getWeather() {
+        try {
+            await weatherService.getWeather()
+            _drawDailyWeather()
+        } catch (error) {
+            console.log(error)
         }
     }
 
 
-    export class WeatherController {
-        constructor() {
-            AppState.on('account', this.getWeather)
-            AppState.on('activeQuote', _drawDailyWeather)
-            this.getWeather()
-
-        }
-        async getWeather() {
-            try {
-                await weatherService.getWeather()
-                _drawDailyWeather()
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-
-    }
+}

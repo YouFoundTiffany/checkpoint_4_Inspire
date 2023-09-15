@@ -1,25 +1,22 @@
 import { AppState } from "../AppState.js"
 
+
 export class Quote {
     constructor(data) {
-        this._id = data._id || data.id || ''
-        this.content = data.content || ''
+        this._id = data._id || data.id
+        this.content = data.content
         this.tags = data.tags || []
         this.description = data.description || ''
         this.author = data.author || ''
     }
 
-    get QuoteTemplate() {
+    get quoteTemplate() {
         return `
-            <p>${this._id.author}</p>
+            <p>${this.author}</p>
             <p>${this.content}</p>
         `
     }
 
+
+
 }
-
-/* <div id="quotes">
-
-    <p>${this.author}</p>
-    <p>${this.content}</p>
-</div> */

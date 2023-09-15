@@ -1,17 +1,13 @@
 import { AppState } from "../AppState.js";
-import { Quote } from "../models/Quote.js";
 import { quotesService } from "../services/QuotesService.js";
-import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
+
 
 function _drawDailyQuote() {
     // console.log('drawing daily quote')
     let activeQuote = AppState.activeQuote
-    let template = ''
-    // FIXME need get template from quote to set into the HTML
-    // TODO REACTIVATE WHEN DONE WITH HTML
-    setHTML('active-quote', template)
-    console.log('where is the quote?', activeQuote)
+    setHTML('thequote', activeQuote?.quoteTemplate)
+
 
 }
 
@@ -19,18 +15,11 @@ function _drawDailyQuote() {
 export class QuotesController {
     constructor() {
 
-        // console.log('images controller connected')
-        // this.getImage()
-        //  wait for the account to come back before trying  get req to the sandbox
-        // @ts-ignore
-        AppState.on('account')
-        // @ts-ignore
-        AppState.on('user')
+
 
         AppState.on('activeQuote', _drawDailyQuote)
-        this.getQuote()//getting the quote data
-        _drawDailyQuote()
-        // console.log('drawing daily quote')
+        this.getQuote()
+
     }
     async getQuote() {
         try {
@@ -40,13 +29,6 @@ export class QuotesController {
         } catch (error) {
             console.log(error)
         }
-        // }
-        // drawQuote() {
-        //     const quote = AppState.activeQuote
-        //     if (!quote) { return }
-        //     const quoteHtml = quote.QuoteTemplate(quote)
-        //     document.getElementById('quote-div')
-        //     ?.innerHTML=quoteHtml
     }
 
 
