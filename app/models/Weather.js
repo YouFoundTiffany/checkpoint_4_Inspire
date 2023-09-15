@@ -21,11 +21,11 @@ export class Weather {
     // }
 
 
-    get ComputedTemp(kelvinTemp) {
-        const celsius = kelvinTemp - 273.15
-        const fahrenheit = (celsius * 9 / 5) + 32
+    // get ComputedTemp(kelvinTemp) {
+    //     const celsius = kelvinTemp - 273.15
+    //     const fahrenheit = (celsius * 9 / 5) + 32
 
-    }
+    // }
 
     // <p>
     //   <label>Fahrenheit</label>
